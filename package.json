@@ -1,0 +1,40 @@
+{
+  "name": "@agama/uuid",
+  "version": "0.1.0",
+  "description": "Utility library to generate uuid",
+  "keywords": [
+    "agama",
+    "isomorphic",
+    "utility",
+    "uuid",
+    "generator"
+  ],
+  "license": "MIT",
+  "main": "src/index.js",
+  "typings": "src/index",
+  "scripts": {
+    "dev": "tsc --watch",
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublish": "npm run build"
+  },
+  "author": {
+    "name": "Albert Cuartiella",
+    "email": "cuarti1992@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cuarti/agama-uuid.git"
+  },
+  "homepage": "https://github.com/cuarti/agama-uuid#readme",
+  "bugs": {
+    "url": "https://github.com/cuarti/agama-uuid/issues"
+  },
+  "dependencies": {
+    "@agama/platform": "^0.1.0",
+    "@types/node": "^7.0.18"
+  },
+  "devDependencies": {
+    "typescript": "^2.3.2"
+  }
+}
