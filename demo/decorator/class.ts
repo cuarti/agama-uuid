@@ -18,7 +18,7 @@ function uuid() {
 
     let generator = new UUIDGenerator();
 
-    return <T extends {new(...args: any[]): Identificable}>(constructor: T): T => {
+    return <T extends {new(...args: any[]): Identifiable}>(constructor: T): T => {
 
         return class extends constructor {
 
@@ -31,12 +31,12 @@ function uuid() {
     }
 }
 
-interface Identificable {
+interface Identifiable {
     id: number;
 }
 
 @uuid()
-class User implements Identificable {
+class User implements Identifiable {
 
     public id: number;
     public name: string;
