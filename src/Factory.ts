@@ -1,7 +1,6 @@
 
 import {IS_NODEJS} from '@agama/platform'
 import {UUID} from './UUID';
-import {BaseUUID} from './BaseUUID';
 import {numPad} from './util';
 
 
@@ -34,7 +33,7 @@ export class Factory {
         let c = numPad(this.counter, 6);
         this.counter = this.counter === Factory.MAX_COUNTER ? 0 : this.counter + 1;
 
-        return new BaseUUID(this.time.toString(16) + this.adapter.machineId() + numPad(this.adapter.processId(), 4) + c);
+        return new UUID(this.time.toString(16) + this.adapter.machineId() + numPad(this.adapter.processId(), 4) + c);
     }
 
 }
