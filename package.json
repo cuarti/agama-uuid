@@ -31,10 +31,10 @@
     "url": "https://github.com/cuarti/agama-uuid/issues"
   },
   "dependencies": {
-    "@agama/platform": "^0.1.0",
-    "@types/node": "^7.0.18"
+    "@agama/platform": "^0.1.1"
   },
   "devDependencies": {
-    "typescript": "^2.3.2"
+    "@types/node": "^8.0.1",
+    "typescript": "^2.4.0"
   }
 }
