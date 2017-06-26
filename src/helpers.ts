@@ -1,15 +1,22 @@
 
 import {UUID} from './UUID';
-import {Factory} from './Factory';
+import {MongoLikeUUIDBuilder} from './MongoLikeUUIDBuilder';
 
 
-let factory = new Factory();
-
+let builder = new MongoLikeUUIDBuilder();
 
 export function generate(): UUID {
-    return factory.generate();
+    return builder.generate();
 }
 
-export function isValid(bytes: string): boolean {
-    return !!bytes.match(/^[0-9a-f]{24}$/);
+export function uuid(): UUID {
+    return generate();
+}
+
+export function isValid(bytes: number): boolean;
+export function isValid(bytes: string): boolean;
+export function isValid(bytes: UUID): boolean;
+
+export function isValid(bytes: any): boolean {
+    return builder.valid(bytes);
 }

@@ -1,57 +1,38 @@
 
+
 /**
  * Universal unique identifier
  */
-export class UUID {
-
-    private bytes: string;
-
-    public constructor(bytes: string) {
-        this.bytes = bytes;
-    }
+export interface UUID {
 
     /**
      * Get timestamp value of id
      *
      * @return
      */
-    public getTimestamp(): number {
-        return parseInt(this.bytes.substring(0, 8), 16) * 1000;
-    }
+    getTimestamp(): number;
 
     /**
      * Get date value of id
      *
      * @return
      */
-    public getDate(): Date {
-        return new Date(this.getTimestamp());
-    }
+    getDate(): Date;
 
     /**
      * Get counter value of id
      *
      * @return
      */
-    public getCounter(): number {
-        return parseInt(this.bytes.substring(18, 24), 16);
-    }
+    getCounter(): number;
 
     /**
      * Get bytes
      *
      * @return
      */
-    public getBytes(): string {
-        return this.bytes;
-    }
+    getBytes(): string;
 
-    public toString(): string {
-        return this.getBytes();
-    }
-
-    public toJSON(): string {
-        return this.getBytes();
-    }
+    toJSON(): string;
 
 }
