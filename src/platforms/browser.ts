@@ -1,15 +1,16 @@
 
 import {PlatformUtil} from './PlatformUtil';
+import {sha512} from '../util/sha512';
 
 
 const utils: PlatformUtil = {
 
     getMachineId(): string {
-        throw new Error('Browser implementation is not supported yet');
+        return sha512(location.hostname).slice(-6);
     },
 
     getProcessId(): string {
-        throw new Error('Browser implementation is not supported yet');
+        return sha512(navigator.userAgent).slice(-4);
     }
 
 };

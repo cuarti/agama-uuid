@@ -11,7 +11,6 @@ const utils: PlatformUtil = {
     getMachineId(): string {
 
         let networks = networkInterfaces();
-        let hash = createHash('md5');
 
         for(let i in networks) {
             if(networks.hasOwnProperty(i)) {
